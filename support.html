@@ -310,6 +310,26 @@
       opacity: 0.7;
     }
 
+    /* ── Section headings ── */
+
+    .faq-group {
+      margin-top: 40px;
+    }
+
+    .faq-group:first-child {
+      margin-top: 0;
+    }
+
+    .faq-group-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+
     /* ── Responsive ── */
 
     @media (max-width: 480px) {
@@ -356,101 +376,309 @@
       <h1 class="faq-heading">Common questions<span class="teal-dot"></span></h1>
       <p class="faq-sub">If something isn't answered here, just email us.</p>
 
-      <div class="faq-list" id="faq-list">
+      <div id="faq-list">
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            How do I get help?
-            <span class="faq-icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              Email us at <a href="mailto:support@a-little-help.com">support@a-little-help.com</a>. We read every message and reply personally — usually within a day or two.
+        <!-- General -->
+        <div class="faq-group">
+          <p class="faq-group-label">General</p>
+          <div class="faq-list">
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                How do I get help?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  Email us at <a href="mailto:support@a-little-help.com">support@a-little-help.com</a>. We read every message and reply personally — usually within a day or two.
+                </div>
+              </div>
             </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                How do I invite someone to a resolution?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  If they're already on A Little Help, search for them by username inside the app and send an invite. If they're not on the app yet, you can send them a link via text message. They'll need to create a free account to join, which takes less than a minute.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Is it free?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  Yes, completely. No ads, no paywalls, no hidden costs. There's an optional way to support the app if you find it useful, but it changes nothing about your experience.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Is it available on Android?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  Not yet. A Little Help is currently available on iOS. Android is on the way.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                I was invited to a resolution but the invite has expired. What do I do?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  Ask the person who invited you to send a fresh invite from their resolution. Invites expire after 72 hours.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                My picks aren't showing up for the group.
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  This is intentional — picks are hidden from other members until everyone has finished adding theirs. Once the group is ready, everything is revealed and voting begins.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                I can't find a friend by their username.
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  Search their exact @username. Usernames are case-insensitive but must otherwise match exactly.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                I'm not receiving notifications.
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  Check that notifications are enabled for A Little Help in your iPhone's Settings app under Notifications. You can also manage your notification preferences inside the app under Profile → Notifications.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                I supported the app but my supporter status isn't showing.
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  Email us at <a href="mailto:support@a-little-help.com">support@a-little-help.com</a> with your Apple ID email and we'll sort it out promptly.
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            I was invited to a resolution but the invite has expired. What do I do?
-            <span class="faq-icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              Ask the person who invited you to send a fresh invite from their resolution. Invites expire after 72 hours.
+        <!-- How it works -->
+        <div class="faq-group">
+          <p class="faq-group-label">How it works</p>
+          <div class="faq-list">
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What is a resolution?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  A resolution is what we call a decision in progress. You add your options, invite your group, and vote until a clear answer emerges. When it's done, you've settled something together.
+                </div>
+              </div>
             </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                How does voting work?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  Two options appear at a time. You pick one. This repeats until only one option remains. Votes stay hidden until everyone in the group has weighed in, then the result simply arrives.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Can people see how I voted?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  No. Your votes are always private. The group sees the outcome, never who voted for what.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What happens if there's a tie?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  The person who started the resolution casts the deciding vote. It stays quiet and the result moves forward.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What is Ask a Friend?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  Ask a Friend is a one-to-one mode where you share your options with someone you trust and let them work through them on your behalf. They don't decide for you. They just help you see things a little more clearly. Their choices along the way stay completely private.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What is Pick for Me?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  Pick for Me is a solo feature for when you're drawing a complete blank. Set your filters once and the app suggests something warm and considered. You can ask for a different suggestion up to three times. No pressure to take any of them.
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            My picks aren't showing up for the group.
-            <span class="faq-icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              This is intentional — picks are hidden from other members until everyone has finished adding theirs. Once the group is ready, everything is revealed and voting begins.
+        <!-- Groups and friends -->
+        <div class="faq-group">
+          <p class="faq-group-label">Groups and friends</p>
+          <div class="faq-list">
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Do my friends need an account to join?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  Yes. Everyone who participates in a resolution needs an account. It's free and takes less than a minute to set up.
+                </div>
+              </div>
             </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What happens if someone doesn't respond to an invite?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  Invites expire after 72 hours if there's no response. Their spot is removed and the pick allocation adjusts for the remaining group.
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            I can't find a friend by their username.
-            <span class="faq-icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              Search their exact @username. Usernames are case-insensitive but must otherwise match exactly.
+        <!-- Privacy -->
+        <div class="faq-group">
+          <p class="faq-group-label">Privacy</p>
+          <div class="faq-list">
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Are my votes private?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  Yes, always. No one ever finds out who voted for what. The group sees where they landed together, nothing more.
+                </div>
+              </div>
             </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                In Ask a Friend, can the creator see how the helper voted?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  No. The creator only ever sees the final result. Everything the helper did along the way stays completely private. This is a core promise of the feature, not just a setting.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What data does A Little Help collect?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  We collect what's needed to run the app and nothing more. Your votes are never individually recorded. Analytics are anonymous and opt-in only. You can read the full details in our <a href="https://alittlehelpapp.github.io/legal/privacy.html">Privacy Policy</a>.
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            I'm not receiving notifications.
-            <span class="faq-icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              Check that notifications are enabled for A Little Help in your iPhone's Settings app under Notifications. You can also manage your notification preferences inside the app under Profile → Notifications.
-            </div>
-          </div>
-        </div>
+        <!-- Account -->
+        <div class="faq-group">
+          <p class="faq-group-label">Account</p>
+          <div class="faq-list">
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            How do I delete my account?
-            <span class="faq-icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              Go to Profile → Security → Delete account. Your data will be permanently deleted after 30 days. You'll receive a reminder at day 25 in case you change your mind.
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                How do I delete my account?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  You can delete your account at any time from the Security section in your profile. After 30 days, all your personal data is permanently deleted. If you change your mind, you have 30 days to reactivate.
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            Is my voting history private?
-            <span class="faq-icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              Yes. Votes are never individually attributed — the group only ever sees the final result, never who voted for what.
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                If the app introduces paid features in the future, will I be charged?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer" role="region">
+                <div class="faq-answer-inner">
+                  No. Everyone who creates an account now will always have free access to everything available today. That's a technical guarantee built into the app, not just a promise.
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            I supported the app but my supporter status isn't showing.
-            <span class="faq-icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              Email us at <a href="mailto:support@a-little-help.com">support@a-little-help.com</a> with your Apple ID email and we'll sort it out promptly.
-            </div>
           </div>
         </div>
 
@@ -472,7 +700,6 @@
 
   <script>
     const items = document.querySelectorAll('.faq-item');
-
     items.forEach(item => {
       const btn = item.querySelector('.faq-question');
       const answer = item.querySelector('.faq-answer');
