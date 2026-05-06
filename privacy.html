@@ -3,307 +3,598 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — A Little Help (v2)</title>
+  <title>Privacy Policy — A Little Help</title>
   <meta name="description" content="Privacy Policy for A Little Help, operated by Little Frisser LLC." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --brand: #1A1A2E;
-      --accent: #2D6BE4;
-      --accent-soft: #EBF1FD;
-      --text: #1A1A2E;
-      --muted: #6B7280;
-      --border: #E5E7EB;
-      --surface: #F9FAFB;
-      --plain-terms-bg: #F0F5FF;
-      --plain-terms-border: #93B4F0;
-      --eu-bg: #FFF8F0;
-      --eu-border: #F59E0B;
-      --eu-header: #92400E;
-      --font-body: 'Lora', Georgia, serif;
-      --font-ui: 'DM Sans', system-ui, sans-serif;
-    }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 17px; scroll-behavior: smooth; }
-    body { font-family: var(--font-body); color: var(--text); background: #fff; line-height: 1.75; -webkit-font-smoothing: antialiased; }
 
-    /* Top bar */
-    .topbar { background: var(--brand); padding: 14px 24px; display: flex; align-items: center; gap: 10px; }
-    .topbar-wordmark { font-family: var(--font-ui); font-size: 1rem; font-weight: 600; color: #fff; text-decoration: none; letter-spacing: -0.01em; }
-    .topbar-dot { color: var(--accent); }
-    .topbar-sep { color: rgba(255,255,255,0.25); font-family: var(--font-ui); font-size: 0.85rem; margin-left: 4px; }
-    .topbar-page { font-family: var(--font-ui); font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-left: 4px; }
-    .topbar-links { margin-left: auto; display: flex; gap: 20px; }
-    .topbar-links a { font-family: var(--font-ui); font-size: 0.8rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.15s; }
-    .topbar-links a:hover { color: #fff; }
-    .topbar-links a.active { color: #fff; font-weight: 600; }
+    :root {
+      --teal:        #3D7370;
+      --teal-dark:   #2A5250;
+      --sand-bg:     #F5EFE6;
+      --sand-accent: #EDD9A3;
+      --ink:         #1C2B2A;
+      --secondary:   #5E7574;
+      --muted:       #7A8F8E;
+      --border:      #D8CFBF;
+      --white:       #FFFFFF;
+      --card-bg:     #FFFFFF;
+      --winner-bg:   #FDFAF4;
+      --eu-bg:       #FFF8F0;
+      --eu-border:   #E8C170;
+    }
 
-    /* Hero */
-    .hero { background: var(--brand); padding: 56px 24px 52px; text-align: center; border-bottom: 3px solid var(--accent); }
-    .hero .doc-brand { font-family: var(--font-ui); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px; }
-    .hero .doc-type { font-family: var(--font-ui); font-size: 2.4rem; font-weight: 700; color: #fff; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; }
-    .hero .doc-meta { font-family: var(--font-ui); font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-top: 6px; }
-    .hero .doc-meta a { color: rgba(255,255,255,0.4); text-decoration: underline; text-underline-offset: 3px; }
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
 
-    /* Layout */
-    .layout { display: grid; grid-template-columns: 210px 1fr; max-width: 1020px; margin: 0 auto; align-items: start; }
+    body {
+      background-color: var(--sand-bg);
+      color: var(--ink);
+      font-family: 'DM Sans', -apple-system, 'SF Pro Text', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
-    /* Sidebar TOC */
-    .toc { position: sticky; top: 32px; padding: 40px 16px 40px 28px; font-family: var(--font-ui); }
-    .toc-label { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
-    .toc ol { list-style: none; padding: 0; }
-    .toc ol li { margin-bottom: 1px; }
-    .toc ol li a { display: block; font-size: 0.77rem; color: var(--muted); text-decoration: none; padding: 4px 8px; border-radius: 5px; line-height: 1.35; transition: all 0.15s; }
-    .toc ol li a:hover { color: var(--accent); background: var(--accent-soft); }
+    .page-wrapper { max-width: 680px; margin: 0 auto; padding: 0 20px; }
 
-    /* Article */
-    article { padding: 48px 48px 80px 36px; border-left: 1px solid var(--border); min-width: 0; }
-    article p { margin-bottom: 1.1em; font-size: 1rem; color: #2C2C3E; }
-    article h2 { font-family: var(--font-ui); font-size: 1.2rem; font-weight: 700; color: var(--brand); margin: 2.8em 0 0.7em; padding-bottom: 0.4em; border-bottom: 1.5px solid var(--border); letter-spacing: -0.02em; scroll-margin-top: 24px; }
-    article h2:first-child { margin-top: 0; }
-    article h3 { font-family: var(--font-ui); font-size: 0.95rem; font-weight: 600; color: var(--accent); margin: 1.8em 0 0.5em; scroll-margin-top: 24px; }
-    article h4 { font-family: var(--font-ui); font-size: 0.9rem; font-weight: 600; color: var(--brand); margin: 1.4em 0 0.4em; }
-    article ul { margin: 0.5em 0 1.1em 0; padding-left: 1.4em; }
-    article ul li { margin-bottom: 0.4em; font-size: 1rem; color: #2C2C3E; }
-    article a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-    article a:hover { opacity: 0.75; }
+    /* ── Header ── */
+    header {
+      padding: 52px 0 40px;
+      border-bottom: 1px solid var(--border);
+    }
 
-    /* Plain terms */
-    .plain-terms { background: var(--plain-terms-bg); border-left: 3px solid var(--plain-terms-border); border-radius: 0 6px 6px 0; padding: 11px 16px; margin: 0.1em 0 1.2em; font-size: 0.88rem !important; color: #374151 !important; }
-    .plain-terms em { font-style: italic; }
+    .wordmark {
+      display: inline-flex;
+      align-items: baseline;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+    }
+    .wordmark-a-little { color: var(--ink); font-weight: 400; }
+    .wordmark-help     { color: var(--teal); font-weight: 500; }
+
+    .doc-meta-block { margin-top: 4px; }
+    .doc-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .doc-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .teal-dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+      margin-left: 5px; margin-bottom: 1px;
+      vertical-align: middle;
+      opacity: 0.7;
+    }
+    .doc-effective {
+      font-size: 14px;
+      color: var(--secondary);
+      margin-top: 4px;
+    }
+    .doc-effective a {
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1px solid var(--sand-accent);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .doc-effective a:hover { color: var(--teal-dark); border-color: var(--teal-dark); }
+
+    /* ── Nav pills ── */
+    .doc-nav {
+      display: flex;
+      gap: 8px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .doc-nav a {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 5px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--white);
+      transition: all 0.15s;
+    }
+    .doc-nav a:hover { color: var(--teal); border-color: var(--teal); }
+    .doc-nav a.active { color: var(--white); background: var(--teal); border-color: var(--teal); }
+
+    /* ── Content sections ── */
+    .doc-body { padding: 44px 0 60px; }
+
+    .doc-section {
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+
+    .section-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .section-card + .section-card { margin-top: 2px; }
+
+    .section-heading {
+      padding: 18px 20px 0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    .section-body {
+      padding: 10px 20px 20px;
+      font-size: 14px;
+      color: var(--secondary);
+      line-height: 1.65;
+    }
+
+    .section-body p + p { margin-top: 10px; }
+
+    .section-body a {
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1px solid var(--sand-accent);
+      transition: color 0.15s;
+    }
+    .section-body a:hover { color: var(--teal-dark); }
+
+    .section-body ul {
+      margin: 8px 0 4px 0;
+      padding-left: 18px;
+    }
+    .section-body ul li { margin-bottom: 5px; }
+
+    /* Plain-language callout */
+    .plain-terms {
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: var(--winner-bg);
+      border-left: 2.5px solid var(--sand-accent);
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      color: var(--secondary);
+      font-style: italic;
+      line-height: 1.55;
+    }
+
+    /* Sub-sections (2.1, 2.2 etc.) */
+    .subsection {
+      border-top: 1px solid var(--border);
+      padding: 16px 20px;
+    }
+    .subsection:first-child { border-top: none; }
+    .subsection-heading {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--teal);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .subsection p { font-size: 14px; color: var(--secondary); line-height: 1.65; }
+    .subsection p + p { margin-top: 8px; }
+    .subsection ul { margin: 6px 0 2px 0; padding-left: 18px; }
+    .subsection ul li { font-size: 14px; color: var(--secondary); margin-bottom: 4px; }
+    .subsection a { color: var(--teal); text-decoration: none; border-bottom: 1px solid var(--sand-accent); }
+    .subsection a:hover { color: var(--teal-dark); }
 
     /* EU note */
-    .eu-section { background: var(--eu-bg); border: 1.5px solid var(--eu-border); border-radius: 10px; padding: 28px 32px; margin-top: 3em; }
-    .eu-note-header { font-family: var(--font-ui); font-size: 1.05rem; font-weight: 700; color: var(--eu-header); margin-bottom: 1em; display: flex; align-items: center; gap: 8px; }
-    .eu-section p { color: #4B3620; font-size: 0.95rem; }
-    .eu-section h4 { font-family: var(--font-ui); font-size: 0.88rem; font-weight: 600; color: var(--eu-header); margin: 1.3em 0 0.35em; }
+    .eu-card {
+      background: var(--eu-bg);
+      border: 1px solid var(--eu-border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 2px;
+    }
+    .eu-card .section-heading { color: #7A4F10; }
+    .eu-card .section-body { color: #5C3A0E; }
+    .eu-card .subsection { border-top-color: var(--eu-border); }
+    .eu-card .subsection-heading { color: #7A4F10; }
+    .eu-card .subsection p, .eu-card .subsection ul li { color: #5C3A0E; }
 
-    /* Footer */
-    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; font-family: var(--font-ui); font-size: 0.78rem; color: var(--muted); }
-    footer a { color: var(--accent); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-    .footer-links { margin-top: 8px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 40px;
+    }
+    .footer-inner { display: flex; flex-direction: column; gap: 10px; }
+    .footer-brand { font-size: 12px; color: var(--muted); }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: 12px; color: var(--muted); text-decoration: none;
+      border-bottom: 1px solid var(--border); padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .footer-links a:hover { color: var(--teal); border-color: var(--teal); }
 
-    /* Responsive */
-    @media (max-width: 700px) {
-      .layout { grid-template-columns: 1fr; }
-      .toc { display: none; }
-      article { padding: 32px 20px 60px; border-left: none; }
-      .hero .doc-type { font-size: 1.85rem; }
-      .topbar-links { display: none; }
+    @media (max-width: 480px) {
+      header { padding: 36px 0 32px; }
+      .doc-title { font-size: 24px; }
+      .section-heading { font-size: 14px; padding: 16px 16px 0; }
+      .section-body { padding: 10px 16px 18px; font-size: 13px; }
+      .subsection { padding: 14px 16px; }
     }
   </style>
 </head>
 <body>
+<div class="page-wrapper">
 
-  <nav class="topbar">
-    <a class="topbar-wordmark" href="#">a little help<span class="topbar-dot">.</span></a>
-    <span class="topbar-sep">/</span>
-    <span class="topbar-page">Legal</span>
-    <div class="topbar-links">
+  <!-- Header -->
+  <header>
+    <div class="wordmark">
+      <span class="wordmark-a-little">A Little&nbsp;</span><span class="wordmark-help">Help</span>
+    </div>
+    <div class="doc-meta-block">
+      <p class="doc-label">Legal</p>
+      <h1 class="doc-title">Privacy Policy<span class="teal-dot"></span></h1>
+      <p class="doc-effective">Effective date: April 10, 2026 &nbsp;·&nbsp; v3 &nbsp;·&nbsp; Hosted at: <a href="https://alittlehelpapp.github.io/legal/privacy.html">alittlehelpapp.github.io/legal/privacy.html</a></p>
+    </div>
+    <nav class="doc-nav" aria-label="Legal documents">
       <a href="privacy.html" class="active">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
-    </div>
-  </nav>
-
-  <div class="hero">
-    <div class="doc-brand">A Little Help &nbsp;·&nbsp; Little Frisser LLC</div>
-    <div class="doc-type">Privacy Policy <span style="font-size:1.1rem;font-weight:400;opacity:0.55;">v2</span></div>
-    <div class="doc-meta">Effective date: April 10, 2026</div>
-    <div class="doc-meta">Hosted at: <a href="https://alittlehelpapp.github.io/legal/privacy.html">https://alittlehelpapp.github.io/legal/privacy.html</a></div>
-  </div>
-
-  <div class="layout">
-
-    <nav class="toc" aria-label="Table of contents">
-      <div class="toc-label">Contents</div>
-      <ol>
-        <li><a href="#s1">1. Who we are</a></li>
-        <li><a href="#s2">2. What we collect</a></li>
-        <li><a href="#s3">3. How we use it</a></li>
-        <li><a href="#s4">4. Third-party services</a></li>
-        <li><a href="#s5">5. Voting privacy</a></li>
-        <li><a href="#s6">6. Invites &amp; searchability</a></li>
-        <li><a href="#s7">7. Children's privacy</a></li>
-        <li><a href="#s8">8. Your rights &amp; controls</a></li>
-        <li><a href="#s9">9. Data retention</a></li>
-        <li><a href="#s10">10. Security</a></li>
-        <li><a href="#s11">11. Grandfathering</a></li>
-        <li><a href="#s12">12. Oregon OCPA</a></li>
-        <li><a href="#s13">13. Changes</a></li>
-        <li><a href="#s14">14. Contact</a></li>
-        <li><a href="#eu">Note for EU users</a></li>
-      </ol>
+      <a href="support.html">Support</a>
     </nav>
+  </header>
 
-    <article>
+  <!-- Body -->
+  <div class="doc-body">
 
-      <p>This Privacy Policy explains how Little Frisser LLC (&#x201C;we,&#x201D; &#x201C;us,&#x201D; or &#x201C;our&#x201D;) collects, uses, and protects your information when you use A Little Help (the &#x201C;app&#x201D;). We&#x2019;ve written it in plain language because we believe you deserve to understand exactly what&#x2019;s happening with your data &#x2014; not just acknowledge a wall of legal text.</p>
-      <p>If something here isn&#x2019;t clear, email us at <a href="mailto:alittlehelpapp@proton.me">alittlehelpapp@proton.me</a> and we&#x2019;ll explain it.</p>
-
-      <h2 id="s1">1. Who we are</h2>
-      <p>A Little Help is operated by Little Frisser LLC, a company registered in the State of Oregon, United States. We built this app to make group decision-making less stressful &#x2014; not to harvest your data.</p>
-
-      <h2 id="s2">2. What we collect and why</h2>
-
-      <h3>2.1 Account information</h3>
-      <p>When you create an account, we collect your display name, username, email address, and password. Passwords are hashed via Supabase Auth &#x2014; we never store them in readable form. We also collect optional fields: age group, gender identity, and city. These help us make better content suggestions and improve the app for everyone.</p>
-      <p class="plain-terms"><em>In plain terms: we need your email to identify your account and let you log back in. The rest is optional and helps us understand our users at an aggregate level.</em></p>
-
-      <h3>2.2 Location data</h3>
-      <p>Location is accessed only when the app is open and only if you&#x2019;ve granted permission. We use it to find nearby restaurants, events, and activities. We don&#x2019;t store your precise location history.</p>
-      <p class="plain-terms"><em>In plain terms: we look up what&#x2019;s near you when you&#x2019;re using the app. We don&#x2019;t track where you go.</em></p>
-
-      <h3>2.3 Contacts</h3>
-      <p>If you grant contacts permission, we compare your phone contacts against registered usernames to suggest friends who are already on A Little Help. Your contacts are compared locally and are never uploaded to or stored on our servers.</p>
-      <p class="plain-terms"><em>In plain terms: your address book stays on your device. We only check whether a contact&#x2019;s details match an existing username &#x2014; nothing more.</em></p>
-
-      <h3>2.4 Bracket and decision data</h3>
-      <p>We store the items you nominate, your bracket history, and bracket outcomes. Votes are stored as aggregate totals only &#x2014; for example, 2&#x2013;1. We never record which individual voted for which option. During the adding picks phase, other group members can see that you&#x2019;ve added picks, but not what those picks are. When adding a custom pick, you may optionally attach a URL link for reference. If provided, that link is stored with the pick and is visible to all members of the bracket.</p>
-      <p class="plain-terms"><em>In plain terms: your specific votes are private. The group sees outcomes, not individual decisions.</em></p>
-
-      <h3>2.5 Ask a Friend &#x2014; a specific privacy promise</h3>
-      <p>In Ask a Friend mode, the helper&#x2019;s individual decision path through the bracket is completely private. The creator only ever sees the final result and the overall standings. We never share the helper&#x2019;s step-by-step choices with the creator or anyone else. This is a core privacy commitment of the feature.</p>
-      <p class="plain-terms"><em>In plain terms: if someone asks you to help them decide, the creator will never know how you voted along the way &#x2014; only what you ultimately chose.</em></p>
-
-      <h3>2.6 Saved items and preferences</h3>
-      <p>We store your saved favourites, custom picks, disliked items, notification preferences, theme settings, accessibility preferences, analytics consent state, and supporter status. These are stored server-side so they persist across devices and sessions.</p>
-
-      <h3>2.7 Push notification tokens</h3>
-      <p>We store your push notification token so we can send you alerts &#x2014; such as when it&#x2019;s your turn to vote, or when a friend invites you to a bracket. Tokens are updated on every app open. If a token is invalidated, it is cleared from our database immediately.</p>
-
-      <h3>2.8 Post-decision micro-survey (Ask a Friend only)</h3>
-      <p>After an Ask a Friend bracket completes, you may see a brief survey asking how you feel about the outcome. The survey includes a privacy note: &#x2018;Just between you and us &#x2014; [Name] won&#x2019;t see this.&#x2019; Responses are stored as anonymous aggregates &#x2014; no user ID, bracket ID, or helper ID is ever associated with a response. If you select &#x2018;Ask me later,&#x2019; the survey reappears next time you open an Ask a Friend bracket specifically. If you haven&#x2019;t returned to one within 2&#x2013;3 weeks, the deferred response is discarded automatically.</p>
-      <p class="plain-terms"><em>In plain terms: how you felt about the decision is between you and us. Your helper never sees it.</em></p>
-
-      <h3>2.9 Analytics</h3>
-      <p>We generate anonymous aggregate analytics nightly from completed bracket data. We never write user IDs to analytics tables. A minimum threshold of 10 brackets per demographic segment is enforced before any analytics row is created &#x2014; this prevents individual data points from being re-identified.</p>
-      <p>Analytics collection requires your explicit opt-in during onboarding. The default state is opted out. You can change this at any time in Privacy &amp; Data settings.</p>
-
-      <h3>2.10 Supporter tier</h3>
-      <p>If you choose to support the app financially, payment is handled entirely by RevenueCat. We never process or store payment card data. We store your supporter status and a personal heart icon visible only to you in your own profile &#x2014; never to other users.</p>
-
-      <h2 id="s3">3. How we use your information</h2>
-      <ul>
-        <li>To operate the app and provide its features</li>
-        <li>To suggest nearby content when location permission is granted</li>
-        <li>To send notifications you&#x2019;ve chosen to receive</li>
-        <li>To match contacts against registered usernames (locally only)</li>
-        <li>To improve the app through anonymous aggregate analytics (only if you&#x2019;ve opted in)</li>
-        <li>To process voluntary supporter contributions via RevenueCat</li>
-        <li>To respond to your support requests</li>
-      </ul>
-      <p>We do not use your data to serve advertising. We do not sell your data to third parties. Ever.</p>
-
-      <h2 id="s4">4. Third-party services</h2>
-      <p>We work with the following services to deliver the app. Each has its own privacy policy.</p>
-      <ul>
-        <li>Supabase &#x2014; database and authentication, US-East region</li>
-        <li>Expo &#x2014; push notifications via Apple Push Notification Service (APNs) and Firebase Cloud Messaging (FCM)</li>
-        <li>RevenueCat &#x2014; in-app purchases and subscription management</li>
-        <li>TMDB &#x2014; movie and TV data. This product uses the TMDB API but is not endorsed or certified by TMDB.</li>
-        <li>Google Places API &#x2014; restaurant data. Powered by Google, displayed in-app per their requirements.</li>
-        <li>Google Books API &#x2014; book data</li>
-        <li>Ticketmaster &#x2014; events data</li>
-        <li>Eventbrite &#x2014; events data</li>
-        <li>Railway &#x2014; backend server and scheduled jobs</li>
-        <li>Cloudflare &#x2014; CDN and image caching</li>
-      </ul>
-      <p>We share only the minimum data necessary for each service to function.</p>
-
-      <h2 id="s5">5. Voting and nomination privacy</h2>
-
-      <h3>5.1 Vote privacy</h3>
-      <p>Votes are never individually attributed. All members see the aggregate result (e.g., 2&#x2013;1) &#x2014; never who voted for what. This applies to all bracket modes.</p>
-
-      <h3>5.2 Nomination privacy during pick collection</h3>
-      <p>While a bracket is in the pick-collection phase, other members can see that you&#x2019;ve added picks (name, status, and count), but not what you&#x2019;ve nominated. Options are revealed only when voting begins.</p>
-
-      <h3>5.3 Ask a Friend privacy</h3>
-      <p>As stated in section 2.5, the helper&#x2019;s individual decision path is completely private. The creator sees only the final result and standings &#x2014; never the helper&#x2019;s step-by-step choices.</p>
-
-      <h2 id="s6">6. Invites and searchability</h2>
-      <p>Any user can be found by searching their @username. Being findable does not add anyone to anything &#x2014; all invites and friend requests require your explicit acceptance. Bracket invites from non-friends expire after 72 hours if not accepted or declined.</p>
-
-      <h2 id="s7">7. Minimum age</h2>
-      <p>A Little Help is an 18+ application and is not intended for use by anyone under 18 years of age. Users must confirm they are at least 18 years old via a required checkbox before creating an account. We do not knowingly collect data from anyone under 18. If you believe a person under 18 has created an account, please contact us at <a href="mailto:alittlehelpapp@proton.me">alittlehelpapp@proton.me</a> and we will delete the account promptly.</p>
-
-      <h2 id="s8">8. Your rights and controls</h2>
-
-      <h3>8.1 Edit your data</h3>
-      <p>You can update your display name, username, email, city, age group, and gender at any time in the app.</p>
-
-      <h3>8.2 Delete your data</h3>
-      <p>You can delete your account at any time from Security settings. Deletion sets a 30-day grace period. All personal data is permanently purged after 30 days via an automated job. At day 25, we&#x2019;ll send a reactivation notice to your registered email so you have a final chance to change your mind. Anonymous analytics contributions (which contain no PII) are retained after deletion.</p>
-
-      <h3>8.3 Saved items, bracket history, and custom picks</h3>
-      <p>You can delete individual saved items, custom picks, and bracket history within the app at any time.</p>
-
-      <h3>8.4 Analytics opt-out</h3>
-      <p>You can opt out of analytics at any time via the Privacy &amp; Data toggle in settings. Users who opt out are excluded from all analytics aggregation.</p>
-
-      <h3>8.5 Notifications</h3>
-      <p>You can independently toggle each notification type &#x2014; bracket invites, voting alerts, pick reminders, tiebreak alerts, friend requests, bracket updates, helper requests, group updates, and support prompts &#x2014; in Notification settings at any time.</p>
-
-      <h3>8.6 Permissions</h3>
-      <p>Location, contacts, and notification permissions can be revoked at any time via your device&#x2019;s system settings.</p>
-
-      <h3>8.7 Data export</h3>
-      <p>You can request a copy of your data via the &#x201C;Request a copy of your data&#x201D; option in Privacy &amp; Data settings. This opens a pre-populated email to <a href="mailto:alittlehelpapp@proton.me">alittlehelpapp@proton.me</a>. We&#x2019;ll fulfil your request manually within a reasonable time.</p>
-
-      <h3>8.8 Data access</h3>
-      <p>You can request details of all data we hold about you via the &#x201C;Request access to your data&#x201D; option in Privacy &amp; Data settings, which opens a pre-populated email to <a href="mailto:alittlehelpapp@proton.me">alittlehelpapp@proton.me</a>.</p>
-
-      <h2 id="s9">9. Data retention</h2>
-      <p>We retain your data while your account is active. If you delete your account, personal data is permanently purged 30 days after deletion. Anonymous analytics contributions are retained indefinitely. Push notification tokens that become invalid are cleared immediately.</p>
-
-      <h2 id="s10">10. Security</h2>
-      <p>We use industry-standard practices to protect your data, including password hashing via Supabase Auth, encrypted data transmission, and access controls. No method of data transmission or storage is 100% secure &#x2014; but we take this seriously and will notify you promptly if we become aware of a breach affecting your data.</p>
-
-      <h2 id="s11">11. Grandfathering commitment</h2>
-      <p>All users who create an account before any future change to a paid model will retain free access to all features available at the time of their sign-up, permanently. This is a technical guarantee stored in our database &#x2014; not just a promise on a webpage. Your <code>account_created_at</code> timestamp and grandfathered status are recorded at sign-up and are never altered.</p>
-
-      <h2 id="s12">12. Oregon Consumer Privacy Act</h2>
-      <p>The Oregon Consumer Privacy Act (OCPA), effective July 2025, applies to companies processing the personal data of 100,000 or more Oregon consumers, or 25,000 or more consumers where data sales generate revenue. A Little Help will be well under these thresholds at launch. We are committed to reassessing this as our user base grows and will update this policy and our practices if we approach these thresholds.</p>
-
-      <h2 id="s13">13. Changes to this policy</h2>
-      <p>If we make material changes to this Privacy Policy, we&#x2019;ll notify you via push notification and an in-app banner at least 30 days before the changes take effect. Continued use of the app after that date constitutes your acceptance of the updated policy. Non-material changes (like fixing a typo) won&#x2019;t require notice, but the effective date at the top of this document will always reflect the most recent revision.</p>
-
-      <h2 id="s14">14. Contact</h2>
-      <p>Questions, concerns, or requests: <a href="mailto:alittlehelpapp@proton.me">alittlehelpapp@proton.me</a><br>Little Frisser LLC, Oregon, United States</p>
-
-      <!-- EU Note -->
-      <div class="eu-section" id="eu">
-        <div class="eu-note-header">Note for EU users</div>
-        <p><strong>A Little Help is not currently available in the European Union.</strong> The app is restricted to the United States in both the Apple App Store and Google Play during this initial period.</p>
-        <p>We plan to expand to the EU as a post-launch workstream. Before we do, we are committed to addressing the following requirements under the General Data Protection Regulation (GDPR) and applicable national laws:</p>
-        <h4>Lawful basis</h4>
-        <p>For EU users, we will document a lawful basis for each category of processing under GDPR Article 6. This will likely include consent (for analytics and notifications), contract performance (for core app functionality), and legitimate interests (for security and fraud prevention).</p>
-        <h4>Data processor agreements</h4>
-        <p>We will put in place Data Processing Agreements (DPAs) with all sub-processors (Supabase, Expo, RevenueCat, Railway, Cloudflare, and the content API providers listed in section 4) before processing EU personal data.</p>
-        <h4>Right to portability</h4>
-        <p>EU users have a right to receive their data in a structured, commonly used, machine-readable format. Before EU expansion, we will implement a self-serve data export tool rather than the manual email process currently in place.</p>
-        <h4>Age gate requirements</h4>
-        <p>A Little Help requires users to be at least 18 years of age, which exceeds the minimum age of consent for data processing in all EU member states (which ranges from 13 to 16 depending on the country). Before EU expansion, we will confirm that our age verification implementation satisfies any additional local requirements, particularly in member states that impose verification obligations above the GDPR minimum.</p>
-        <h4>Data residency</h4>
-        <p>We are aware that some EU member states have data residency preferences or requirements. Supabase currently operates in US-East. Before EU expansion, we will evaluate whether EU-region hosting is required and configure it accordingly.</p>
-        <h4>Our commitment</h4>
-        <p>These requirements will be addressed before A Little Help becomes available in the EU. We will update this Privacy Policy fully when that work is complete.</p>
+    <div class="doc-section">
+      <div class="section-card">
+        <div class="section-body">
+          <p>This Privacy Policy explains how Little Frisser LLC (&#x201C;we,&#x201D; &#x201C;us,&#x201D; or &#x201C;our&#x201D;) collects, uses, and protects your information when you use A Little Help (the &#x201C;app&#x201D;). We&#x2019;ve written it in plain language because we believe you deserve to understand exactly what&#x2019;s happening with your data &#x2014; not just acknowledge a wall of legal text.</p>
+          <p>If something here isn&#x2019;t clear, email us at <a href="mailto:support@a-little-help.com">support@a-little-help.com</a> and we&#x2019;ll explain it.</p>
+        </div>
       </div>
+    </div>
 
-    </article>
-  </div>
+    <!-- 1. Who we are -->
+    <div class="doc-section">
+      <p class="section-label">1. Who we are</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>A Little Help is operated by Little Frisser LLC, a company registered in the State of Oregon, United States. We built this app to make group decision-making less stressful &#x2014; not to harvest your data.</p>
+        </div>
+      </div>
+    </div>
 
+    <!-- 2. What we collect -->
+    <div class="doc-section">
+      <p class="section-label">2. What we collect and why</p>
+      <div class="section-card">
+
+        <div class="subsection">
+          <p class="subsection-heading">2.1 Account information</p>
+          <p>When you create an account, we collect your display name, username, email address, and password. Passwords are hashed via Supabase Auth &#x2014; we never store them in readable form. We also collect optional fields: age group, gender identity, and city.</p>
+          <div class="plain-terms">In plain terms: we need your email to identify your account and let you log back in. The rest is optional and helps us understand our users at an aggregate level.</div>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">2.2 Location data</p>
+          <p>Location is accessed only when the app is open and only if you&#x2019;ve granted permission. We use it to find nearby restaurants, events, and activities. We don&#x2019;t store your precise location history.</p>
+          <div class="plain-terms">In plain terms: we look up what&#x2019;s near you when you&#x2019;re using the app. We don&#x2019;t track where you go.</div>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">2.3 Contact matching</p>
+          <p>At launch, friends are discovered by searching their @username directly in the app. Contact-based friend matching is not available at launch and will be introduced in a future update, at which point this policy will be updated to reflect how that data is handled.</p>
+          <div class="plain-terms">In plain terms: your contacts are not accessed at launch. When contact matching is added in a future update, we will update this section before the feature ships.</div>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">2.4 Resolution and decision data</p>
+          <p>We store the items you nominate, your resolution history, and resolution outcomes. Votes are stored as aggregate totals only &#x2014; for example, 2&#x2013;1. We never record which individual voted for which option. During the adding picks phase, other group members can see that you&#x2019;ve added picks, but not what those picks are. When adding a custom pick, you may optionally attach a URL link for reference. If provided, that link is stored with the pick and is visible to all members of the resolution.</p>
+          <div class="plain-terms">In plain terms: your specific votes are private. The group sees outcomes, not individual decisions.</div>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">2.5 Ask a Friend &#x2014; a specific privacy promise</p>
+          <p>In Ask a Friend mode, the helper&#x2019;s individual decision path through the resolution is completely private. The creator only ever sees the final result and the overall standings. We never share the helper&#x2019;s step-by-step choices with the creator or anyone else. This is a core privacy commitment of the feature.</p>
+          <div class="plain-terms">In plain terms: if someone asks you to help them decide, the creator will never know how you worked through the options &#x2014; only where you landed.</div>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">2.6 Saved items and preferences</p>
+          <p>We store your saved favourites, custom picks, items marked &#x201C;not for me,&#x201D; notification preferences, theme settings, accessibility preferences, analytics consent state, and supporter status. These are stored server-side so they persist across devices and sessions.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">2.7 Push notification tokens</p>
+          <p>We store your push notification token so we can send you alerts &#x2014; such as when it&#x2019;s your turn to vote, or when a friend invites you to a resolution. Tokens are updated on every app open. If a token is invalidated, it is cleared from our database immediately.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">2.8 Post-decision check-in</p>
+          <p>After completing a resolution, you may be shown a brief check-in question asking how you feel about the outcome. This applies across all three modes &#x2014; Ask a Friend, group consensus, and Pick for Me &#x2014; with questions and timing appropriate to each. In Ask a Friend, the check-in includes a privacy note confirming the helper will never see your response. In group mode, the check-in is shown to the creator only. In Pick for Me, the check-in appears on your next app open after using the feature.</p>
+          <p>Responses are stored as anonymous aggregates only &#x2014; no user ID, resolution ID, or helper ID is ever associated with a response. If you select &#x2018;Ask me later,&#x2019; the check-in is deferred and resurfaces at the start of your next session in the same mode. If you have not returned within 2&#x2013;3 weeks, the deferred response is discarded automatically.</p>
+          <div class="plain-terms">In plain terms: check-in responses are private to you and us. In Ask a Friend, your helper never sees them. In group mode, other members never see them. Responses are always anonymous aggregates.</div>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">2.9 Analytics</p>
+          <p>We generate anonymous aggregate analytics nightly from completed resolution data. We never write user IDs to analytics tables. A minimum threshold of 10 resolutions per demographic segment is enforced before any analytics row is created &#x2014; this prevents individual data points from being re-identified.</p>
+          <p>Analytics collection requires your explicit opt-in during onboarding. The default state is opted out. You can change this at any time in Privacy &amp; Data settings.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">2.10 Supporter tier</p>
+          <p>If you choose to support the app financially, payment is handled entirely by RevenueCat. We never process or store payment card data. We store your supporter status and a personal heart icon visible only to you in your own profile &#x2014; never to other users.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. How we use it -->
+    <div class="doc-section">
+      <p class="section-label">3. How we use your information</p>
+      <div class="section-card">
+        <div class="section-body">
+          <ul>
+            <li>To operate the app and provide its features</li>
+            <li>To suggest nearby content when location permission is granted</li>
+            <li>To send notifications you&#x2019;ve chosen to receive</li>
+            <li>To find friends by @username search</li>
+            <li>To improve the app through anonymous aggregate analytics (only if you&#x2019;ve opted in)</li>
+            <li>To process voluntary supporter contributions via RevenueCat</li>
+            <li>To respond to your support requests and content reports</li>
+          </ul>
+          <p style="margin-top:12px;">We do not use your data to serve advertising. We do not sell your data to third parties. Ever.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Third parties -->
+    <div class="doc-section">
+      <p class="section-label">4. Third-party services</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>We work with the following services to deliver the app. Each has its own privacy policy.</p>
+          <ul style="margin-top:10px;">
+            <li>Supabase &#x2014; database and authentication, US-East region</li>
+            <li>Expo &#x2014; push notifications via Apple Push Notification Service (APNs) and Firebase Cloud Messaging (FCM)</li>
+            <li>RevenueCat &#x2014; in-app purchases and subscription management</li>
+            <li>TMDB &#x2014; movie and TV data. This product uses the TMDB API but is not endorsed or certified by TMDB.</li>
+            <li>Google Places API &#x2014; restaurant data. Powered by Google, displayed in-app per their requirements.</li>
+          </ul>
+          <p style="margin-top:10px;">We share only the minimum data necessary for each service to function.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Voting privacy -->
+    <div class="doc-section">
+      <p class="section-label">5. Voting and nomination privacy</p>
+      <div class="section-card">
+
+        <div class="subsection">
+          <p class="subsection-heading">5.1 Vote privacy</p>
+          <p>Votes are never individually attributed. All members see the aggregate result (e.g., 2&#x2013;1) &#x2014; never who voted for what. This applies to all resolution modes.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">5.2 Nomination privacy during pick collection</p>
+          <p>While a resolution is in the pick-collection phase, other members can see that you&#x2019;ve added picks (name, status, and count), but not what you&#x2019;ve nominated. Options are revealed only when voting begins.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">5.3 Ask a Friend privacy</p>
+          <p>As stated in section 2.5, the helper&#x2019;s individual decision path is completely private. The creator sees only the final result and standings &#x2014; never the helper&#x2019;s step-by-step choices.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 6. Invites -->
+    <div class="doc-section">
+      <p class="section-label">6. Invites and searchability</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>Any user can be found by searching their @username. Being findable does not add anyone to anything &#x2014; all invites and friend requests require your explicit acceptance. Resolution invites expire after 72 hours if not accepted or declined.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Minimum age -->
+    <div class="doc-section">
+      <p class="section-label">7. Minimum age</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>A Little Help is an 18+ application and is not intended for use by anyone under 18 years of age. Users must confirm they are at least 18 years old via a required checkbox before creating an account. We do not knowingly collect data from anyone under 18. If you believe a person under 18 has created an account, please contact us at <a href="mailto:support@a-little-help.com">support@a-little-help.com</a> and we will delete the account promptly.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Your rights -->
+    <div class="doc-section">
+      <p class="section-label">8. Your rights and controls</p>
+      <div class="section-card">
+
+        <div class="subsection">
+          <p class="subsection-heading">8.1 Edit your data</p>
+          <p>You can update your display name, username, email, city, age group, and gender at any time in the app.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">8.2 Delete your data</p>
+          <p>You can delete your account at any time from Security settings. All personal data is permanently purged after 30 days via an automated job. At day 25, we&#x2019;ll send a reactivation notice to your registered email. Anonymous analytics contributions (which contain no PII) are retained after deletion.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">8.3 Saved items, resolution history, and custom picks</p>
+          <p>You can delete individual saved items, custom picks, and resolution history within the app at any time.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">8.4 Analytics opt-out</p>
+          <p>You can opt out of analytics at any time via the Privacy &amp; Data toggle in settings. Users who opt out are excluded from all analytics aggregation.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">8.5 Notifications</p>
+          <p>You can independently toggle each notification type &#x2014; resolution invites, voting alerts, pick reminders, tiebreak alerts, friend requests, resolution updates, helper requests, and support prompts &#x2014; in Notification settings at any time.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">8.6 Permissions</p>
+          <p>Location and notification permissions can be revoked at any time via your device&#x2019;s system settings.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">8.7 Data export</p>
+          <p>You can request a copy of your data by emailing <a href="mailto:support@a-little-help.com">support@a-little-help.com</a> with the subject line &#x201C;Data request.&#x201D; We&#x2019;ll fulfil your request manually within a reasonable time.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">8.8 Data access</p>
+          <p>You can request details of all data we hold about you by emailing <a href="mailto:support@a-little-help.com">support@a-little-help.com</a> with the subject line &#x201C;Data access request.&#x201D;</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="doc-section">
+      <p class="section-label">9. Data retention</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>We retain your data while your account is active. If you delete your account, personal data is permanently purged 30 days after deletion. Anonymous analytics contributions are retained indefinitely. Push notification tokens that become invalid are cleared immediately.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="doc-section">
+      <p class="section-label">10. Security</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>We use industry-standard practices to protect your data, including password hashing via Supabase Auth, encrypted data transmission, and access controls. No method of data transmission or storage is 100% secure &#x2014; but we take this seriously and will notify you promptly if we become aware of a breach affecting your data.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="doc-section">
+      <p class="section-label">11. Grandfathering commitment</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>All users who create an account before any future change to a paid model will retain free access to all features available at the time of their sign-up, permanently. This is a technical guarantee stored in our database &#x2014; not just a promise on a webpage. Your <code style="font-family:monospace;font-size:0.88em;background:#F0EBE3;border-radius:4px;padding:1px 5px;">account_created_at</code> timestamp and grandfathered status are recorded at sign-up and are never altered.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="doc-section">
+      <p class="section-label">12. Oregon Consumer Privacy Act</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>The Oregon Consumer Privacy Act (OCPA), effective July 2025, applies to companies processing the personal data of 100,000 or more Oregon consumers, or 25,000 or more consumers where data sales generate revenue. A Little Help will be well under these thresholds at launch. We are committed to reassessing this as our user base grows and will update this policy and our practices if we approach these thresholds.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13 -->
+    <div class="doc-section">
+      <p class="section-label">13. Changes to this policy</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>If we make material changes to this Privacy Policy, we&#x2019;ll notify you via push notification and an in-app banner at least 30 days before the changes take effect. Continued use of the app after that date constitutes your acceptance of the updated policy. Non-material changes won&#x2019;t require notice, but the effective date at the top of this document will always reflect the most recent revision.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14 -->
+    <div class="doc-section">
+      <p class="section-label">14. Contact</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>Questions, concerns, or requests: <a href="mailto:support@a-little-help.com">support@a-little-help.com</a><br>Little Frisser LLC, Oregon, United States</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EU note -->
+    <div class="doc-section">
+      <p class="section-label">Note for EU users</p>
+      <div class="eu-card">
+
+        <div class="subsection" style="border-top:none;">
+          <p style="font-size:14px;color:#5C3A0E;line-height:1.65;"><strong>A Little Help is not currently available in the European Union.</strong> The app is restricted to the United States in both the Apple App Store and Google Play during this initial period. We plan to expand to the EU as a post-launch workstream. Before we do, we are committed to addressing the following requirements under the GDPR and applicable national laws.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">Lawful basis</p>
+          <p>We will document a lawful basis for each category of processing under GDPR Article 6 &#x2014; likely including consent (analytics, notifications), contract performance (core functionality), and legitimate interests (security).</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">Data processor agreements</p>
+          <p>We will put in place Data Processing Agreements (DPAs) with all sub-processors (Supabase, Expo, RevenueCat, and the content API providers listed in section 4) before processing EU personal data.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">Right to portability</p>
+          <p>Before EU expansion, we will implement a self-serve data export tool rather than the manual email process currently in place.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">Age gate requirements</p>
+          <p>A Little Help requires users to be at least 18 years of age, which exceeds the minimum age of consent for data processing in all EU member states (which ranges from 13 to 16 depending on the country). Before EU expansion, we will confirm that our age verification implementation satisfies any additional local requirements.</p>
+        </div>
+
+        <div class="subsection">
+          <p class="subsection-heading">Data residency</p>
+          <p>Supabase currently operates in US-East. Before EU expansion, we will evaluate whether EU-region hosting is required and configure it accordingly.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /doc-body -->
+
+  <!-- Footer -->
   <footer>
-    <div>&#169; 2026 Little Frisser LLC. All rights reserved.</div>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="mailto:alittlehelpapp@proton.me">alittlehelpapp@proton.me</a>
+    <div class="footer-inner">
+      <p class="footer-brand">A Little Help &middot; Little Frisser LLC &middot; Oregon</p>
+      <nav class="footer-links" aria-label="Legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="support.html">Support</a>
+      </nav>
     </div>
   </footer>
 
+</div>
 </body>
 </html>

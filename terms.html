@@ -3,235 +3,441 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service — A Little Help (v2)</title>
+  <title>Terms of Service — A Little Help</title>
   <meta name="description" content="Terms of Service for A Little Help, operated by Little Frisser LLC." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --brand: #1A1A2E;
-      --accent: #2D6BE4;
-      --accent-soft: #EBF1FD;
-      --text: #1A1A2E;
-      --muted: #6B7280;
-      --border: #E5E7EB;
-      --surface: #F9FAFB;
-      --plain-terms-bg: #F0F5FF;
-      --plain-terms-border: #93B4F0;
-      --font-body: 'Lora', Georgia, serif;
-      --font-ui: 'DM Sans', system-ui, sans-serif;
-    }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 17px; scroll-behavior: smooth; }
-    body { font-family: var(--font-body); color: var(--text); background: #fff; line-height: 1.75; -webkit-font-smoothing: antialiased; }
 
-    /* Top bar */
-    .topbar { background: var(--brand); padding: 14px 24px; display: flex; align-items: center; gap: 10px; }
-    .topbar-wordmark { font-family: var(--font-ui); font-size: 1rem; font-weight: 600; color: #fff; text-decoration: none; letter-spacing: -0.01em; }
-    .topbar-dot { color: var(--accent); }
-    .topbar-sep { color: rgba(255,255,255,0.25); font-family: var(--font-ui); font-size: 0.85rem; margin-left: 4px; }
-    .topbar-page { font-family: var(--font-ui); font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-left: 4px; }
-    .topbar-links { margin-left: auto; display: flex; gap: 20px; }
-    .topbar-links a { font-family: var(--font-ui); font-size: 0.8rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.15s; }
-    .topbar-links a:hover { color: #fff; }
-    .topbar-links a.active { color: #fff; font-weight: 600; }
+    :root {
+      --teal:        #3D7370;
+      --teal-dark:   #2A5250;
+      --sand-bg:     #F5EFE6;
+      --sand-accent: #EDD9A3;
+      --ink:         #1C2B2A;
+      --secondary:   #5E7574;
+      --muted:       #7A8F8E;
+      --border:      #D8CFBF;
+      --white:       #FFFFFF;
+      --winner-bg:   #FDFAF4;
+    }
 
-    /* Hero */
-    .hero { background: var(--brand); padding: 56px 24px 52px; text-align: center; border-bottom: 3px solid var(--accent); }
-    .hero .doc-brand { font-family: var(--font-ui); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px; }
-    .hero .doc-type { font-family: var(--font-ui); font-size: 2.4rem; font-weight: 700; color: #fff; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; }
-    .hero .doc-meta { font-family: var(--font-ui); font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-top: 6px; }
-    .hero .doc-meta a { color: rgba(255,255,255,0.4); text-decoration: underline; text-underline-offset: 3px; }
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
 
-    /* Layout */
-    .layout { display: grid; grid-template-columns: 210px 1fr; max-width: 1020px; margin: 0 auto; align-items: start; }
+    body {
+      background-color: var(--sand-bg);
+      color: var(--ink);
+      font-family: 'DM Sans', -apple-system, 'SF Pro Text', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
-    /* Sidebar TOC */
-    .toc { position: sticky; top: 32px; padding: 40px 16px 40px 28px; font-family: var(--font-ui); }
-    .toc-label { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
-    .toc ol { list-style: none; padding: 0; }
-    .toc ol li { margin-bottom: 1px; }
-    .toc ol li a { display: block; font-size: 0.77rem; color: var(--muted); text-decoration: none; padding: 4px 8px; border-radius: 5px; line-height: 1.35; transition: all 0.15s; }
-    .toc ol li a:hover { color: var(--accent); background: var(--accent-soft); }
+    .page-wrapper { max-width: 680px; margin: 0 auto; padding: 0 20px; }
 
-    /* Article */
-    article { padding: 48px 48px 80px 36px; border-left: 1px solid var(--border); min-width: 0; }
-    article p { margin-bottom: 1.1em; font-size: 1rem; color: #2C2C3E; }
-    article h2 { font-family: var(--font-ui); font-size: 1.2rem; font-weight: 700; color: var(--brand); margin: 2.8em 0 0.7em; padding-bottom: 0.4em; border-bottom: 1.5px solid var(--border); letter-spacing: -0.02em; scroll-margin-top: 24px; }
-    article h2:first-child { margin-top: 0; }
-    article h3 { font-family: var(--font-ui); font-size: 0.95rem; font-weight: 600; color: var(--accent); margin: 1.8em 0 0.5em; scroll-margin-top: 24px; }
-    article ul { margin: 0.5em 0 1.1em 0; padding-left: 1.4em; }
-    article ul li { margin-bottom: 0.4em; font-size: 1rem; color: #2C2C3E; }
-    article a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-    article a:hover { opacity: 0.75; }
-    article code { font-family: 'Courier New', monospace; font-size: 0.88em; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; }
+    /* ── Header ── */
+    header { padding: 52px 0 40px; border-bottom: 1px solid var(--border); }
 
-    /* Plain terms */
-    .plain-terms { background: var(--plain-terms-bg); border-left: 3px solid var(--plain-terms-border); border-radius: 0 6px 6px 0; padding: 11px 16px; margin: 0.1em 0 1.2em; font-size: 0.88rem !important; color: #374151 !important; }
-    .plain-terms em { font-style: italic; }
+    .wordmark {
+      display: inline-flex;
+      align-items: baseline;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+    }
+    .wordmark-a-little { color: var(--ink); font-weight: 400; }
+    .wordmark-help     { color: var(--teal); font-weight: 500; }
 
-    /* Footer */
-    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; font-family: var(--font-ui); font-size: 0.78rem; color: var(--muted); }
-    footer a { color: var(--accent); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-    .footer-links { margin-top: 8px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .doc-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .doc-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .teal-dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+      margin-left: 5px; margin-bottom: 1px;
+      vertical-align: middle;
+      opacity: 0.7;
+    }
+    .doc-effective {
+      font-size: 14px;
+      color: var(--secondary);
+      margin-top: 4px;
+    }
+    .doc-effective a {
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1px solid var(--sand-accent);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .doc-effective a:hover { color: var(--teal-dark); border-color: var(--teal-dark); }
 
-    /* Responsive */
-    @media (max-width: 700px) {
-      .layout { grid-template-columns: 1fr; }
-      .toc { display: none; }
-      article { padding: 32px 20px 60px; border-left: none; }
-      .hero .doc-type { font-size: 1.85rem; }
-      .topbar-links { display: none; }
+    .doc-nav {
+      display: flex;
+      gap: 8px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .doc-nav a {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 5px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--white);
+      transition: all 0.15s;
+    }
+    .doc-nav a:hover { color: var(--teal); border-color: var(--teal); }
+    .doc-nav a.active { color: var(--white); background: var(--teal); border-color: var(--teal); }
+
+    /* ── Content ── */
+    .doc-body { padding: 44px 0 60px; }
+    .doc-section { margin-bottom: 40px; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+
+    .section-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .section-body {
+      padding: 18px 20px 20px;
+      font-size: 14px;
+      color: var(--secondary);
+      line-height: 1.65;
+    }
+    .section-body p + p { margin-top: 10px; }
+    .section-body a {
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1px solid var(--sand-accent);
+      transition: color 0.15s;
+    }
+    .section-body a:hover { color: var(--teal-dark); }
+    .section-body ul { margin: 8px 0 4px 0; padding-left: 18px; }
+    .section-body ul li { margin-bottom: 5px; }
+
+    .plain-terms {
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: var(--winner-bg);
+      border-left: 2.5px solid var(--sand-accent);
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      color: var(--secondary);
+      font-style: italic;
+      line-height: 1.55;
+    }
+
+    .subsection { border-top: 1px solid var(--border); padding: 16px 20px; }
+    .subsection:first-child { border-top: none; }
+    .subsection-heading {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--teal);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .subsection p { font-size: 14px; color: var(--secondary); line-height: 1.65; }
+    .subsection p + p { margin-top: 8px; }
+    .subsection ul { margin: 6px 0 2px 0; padding-left: 18px; }
+    .subsection ul li { font-size: 14px; color: var(--secondary); margin-bottom: 4px; }
+    .subsection a { color: var(--teal); text-decoration: none; border-bottom: 1px solid var(--sand-accent); }
+    .subsection a:hover { color: var(--teal-dark); }
+
+    /* ── Footer ── */
+    footer { border-top: 1px solid var(--border); padding: 28px 0 40px; }
+    .footer-inner { display: flex; flex-direction: column; gap: 10px; }
+    .footer-brand { font-size: 12px; color: var(--muted); }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: 12px; color: var(--muted); text-decoration: none;
+      border-bottom: 1px solid var(--border); padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .footer-links a:hover { color: var(--teal); border-color: var(--teal); }
+
+    @media (max-width: 480px) {
+      header { padding: 36px 0 32px; }
+      .doc-title { font-size: 24px; }
+      .section-body { font-size: 13px; padding: 14px 16px 16px; }
+      .subsection { padding: 14px 16px; }
     }
   </style>
 </head>
 <body>
+<div class="page-wrapper">
 
-  <nav class="topbar">
-    <a class="topbar-wordmark" href="#">a little help<span class="topbar-dot">.</span></a>
-    <span class="topbar-sep">/</span>
-    <span class="topbar-page">Legal</span>
-    <div class="topbar-links">
+  <!-- Header -->
+  <header>
+    <div class="wordmark">
+      <span class="wordmark-a-little">A Little&nbsp;</span><span class="wordmark-help">Help</span>
+    </div>
+    <div>
+      <p class="doc-label">Legal</p>
+      <h1 class="doc-title">Terms of Service<span class="teal-dot"></span></h1>
+      <p class="doc-effective">Effective date: April 10, 2026 &nbsp;·&nbsp; v3 &nbsp;·&nbsp; Hosted at: <a href="https://alittlehelpapp.github.io/legal/terms.html">alittlehelpapp.github.io/legal/terms.html</a></p>
+    </div>
+    <nav class="doc-nav" aria-label="Legal documents">
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html" class="active">Terms of Service</a>
-    </div>
-  </nav>
-
-  <div class="hero">
-    <div class="doc-brand">A Little Help &nbsp;·&nbsp; Little Frisser LLC</div>
-    <div class="doc-type">Terms of Service <span style="font-size:1.1rem;font-weight:400;opacity:0.55;">v2</span></div>
-    <div class="doc-meta">Effective date: April 10, 2026</div>
-    <div class="doc-meta">Hosted at: <a href="https://alittlehelpapp.github.io/legal/terms.html">https://alittlehelpapp.github.io/legal/terms.html</a></div>
-  </div>
-
-  <div class="layout">
-
-    <nav class="toc" aria-label="Table of contents">
-      <div class="toc-label">Contents</div>
-      <ol>
-        <li><a href="#s1">1. Eligibility</a></li>
-        <li><a href="#s2">2. Account &amp; security</a></li>
-        <li><a href="#s3">3. Acceptable use</a></li>
-        <li><a href="#s4">4. User-generated content</a></li>
-        <li><a href="#s5">5. Ask a Friend</a></li>
-        <li><a href="#s6">6. Invites &amp; friends</a></li>
-        <li><a href="#s7">7. Supporter tier</a></li>
-        <li><a href="#s8">8. Grandfathering</a></li>
-        <li><a href="#s9">9. Bracket data</a></li>
-        <li><a href="#s10">10. Account termination</a></li>
-        <li><a href="#s11">11. Disclaimer of warranties</a></li>
-        <li><a href="#s12">12. Limitation of liability</a></li>
-        <li><a href="#s13">13. Governing law</a></li>
-        <li><a href="#s14">14. Changes</a></li>
-        <li><a href="#s15">15. Contact</a></li>
-      </ol>
+      <a href="support.html">Support</a>
     </nav>
+  </header>
 
-    <article>
+  <!-- Body -->
+  <div class="doc-body">
 
-      <p>These Terms of Service (&#x201C;Terms&#x201D;) govern your use of A Little Help, operated by Little Frisser LLC (&#x201C;we,&#x201D; &#x201C;us,&#x201D; or &#x201C;our&#x201D;). By creating an account or using the app, you agree to these Terms. If you don&#x2019;t agree, please don&#x2019;t use the app.</p>
-      <p>We&#x2019;ve written these Terms as clearly as we can. Where legal language is unavoidable, we&#x2019;ve followed it with a plain-language summary in italics.</p>
+    <div class="doc-section">
+      <div class="section-card">
+        <div class="section-body">
+          <p>These Terms of Service (&#x201C;Terms&#x201D;) govern your use of A Little Help, operated by Little Frisser LLC (&#x201C;we,&#x201D; &#x201C;us,&#x201D; or &#x201C;our&#x201D;). By creating an account or using the app, you agree to these Terms. If you don&#x2019;t agree, please don&#x2019;t use the app.</p>
+          <p>Where legal language is unavoidable, we&#x2019;ve followed it with a plain-language summary in italics.</p>
+        </div>
+      </div>
+    </div>
 
-      <h2 id="s1">1. Eligibility</h2>
-      <p>You must be at least 18 years old to use A Little Help. By creating an account, you confirm that you meet this requirement. The app is currently available in the United States only.</p>
-      <p class="plain-terms"><em>In plain terms: you need to be 18 or older, and located in the US.</em></p>
+    <!-- 1 -->
+    <div class="doc-section">
+      <p class="section-label">1. Eligibility</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>You must be at least 18 years old to use A Little Help. By creating an account, you confirm that you meet this requirement. The app is currently available in the United States only.</p>
+          <div class="plain-terms">In plain terms: you need to be 18 or older, and located in the US.</div>
+        </div>
+      </div>
+    </div>
 
-      <h2 id="s2">2. Account creation and security</h2>
-      <p>You can create an account with an email and password, or via Google or Apple Single Sign-On (SSO). You are responsible for keeping your account credentials secure. Don&#x2019;t share your password, and let us know immediately at <a href="mailto:alittlehelpapp@proton.me">alittlehelpapp@proton.me</a> if you think your account has been compromised.</p>
-      <p>The app supports biometric authentication (Face ID / Touch ID) as a convenience option. This is managed entirely by your device&#x2019;s operating system &#x2014; we never store biometric data.</p>
-      <p>You must confirm that you are 18 years of age or older before your account is created. This confirmation is required for all sign-up methods, including SSO. You must also agree to these Terms and our Privacy Policy at sign-up.</p>
+    <!-- 2 -->
+    <div class="doc-section">
+      <p class="section-label">2. Account creation and security</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>You can create an account with an email and password, or via Google or Apple Single Sign-On (SSO). You are responsible for keeping your account credentials secure. Don&#x2019;t share your password, and let us know immediately at <a href="mailto:support@a-little-help.com">support@a-little-help.com</a> if you think your account has been compromised.</p>
+          <p>The app supports biometric authentication (Face ID / Touch ID) as a convenience option. This is managed entirely by your device&#x2019;s operating system &#x2014; we never store biometric data.</p>
+          <p>You must confirm that you are 18 years of age or older before your account is created. This confirmation is required for all sign-up methods, including SSO. You must also agree to these Terms and our Privacy Policy at sign-up.</p>
+        </div>
+      </div>
+    </div>
 
-      <h2 id="s3">3. Acceptable use</h2>
-      <p>You agree not to use A Little Help to:</p>
-      <ul>
-        <li>Harass, bully, or intimidate other users</li>
-        <li>Impersonate another person or misrepresent your identity</li>
-        <li>Abuse the invite or bracket system to spam or manipulate other users</li>
-        <li>Use Ask a Friend to pressure, manipulate, or coerce another user into making decisions on your behalf against their wishes</li>
-        <li>Submit offensive, discriminatory, or illegal content as custom bracket items, category names, display names, or group names</li>
-        <li>Reverse-engineer, scrape, or otherwise interfere with the app or its underlying systems</li>
-      </ul>
-      <p>We reserve the right to remove content that violates these rules and to suspend or terminate accounts for repeated violations.</p>
+    <!-- 3 -->
+    <div class="doc-section">
+      <p class="section-label">3. Acceptable use</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>You agree not to use A Little Help to:</p>
+          <ul style="margin-top:8px;">
+            <li>Harass, bully, or intimidate other users</li>
+            <li>Impersonate another person or misrepresent your identity</li>
+            <li>Abuse the invite or resolution system to spam or manipulate other users</li>
+            <li>Use Ask a Friend to pressure, manipulate, or coerce another user into making decisions on your behalf against their wishes</li>
+            <li>Submit offensive, discriminatory, or illegal content as custom resolution items, category names, or display names</li>
+            <li>Reverse-engineer, scrape, or otherwise interfere with the app or its underlying systems</li>
+          </ul>
+          <p style="margin-top:10px;">You can report content you believe violates these rules by long-pressing any user-generated item in the app and selecting the Report option. You can also email us at <a href="mailto:support@a-little-help.com">support@a-little-help.com</a>. We review all reports and will act proportionately &#x2014; up to and including account suspension for serious or repeated violations.</p>
+        </div>
+      </div>
+    </div>
 
-      <h2 id="s4">4. User-generated content</h2>
-      <p>Custom bracket items, category names, display names, group names, and optional URLs attached to custom picks are user-generated content. You are responsible for the content you submit, including any links you attach to picks. Links are visible to all members of the bracket they appear in. By submitting content, you grant us a limited, non-exclusive licence to store and display it within the app for the purpose of operating the service.</p>
-      <p>We don&#x2019;t claim ownership of your content. Decisions made in brackets belong to the users who participated in them, not to us.</p>
-      <p>We may remove content or suspend accounts where content violates these Terms, at our discretion. We&#x2019;ll try to act proportionately and consistently.</p>
+    <!-- 4 -->
+    <div class="doc-section">
+      <p class="section-label">4. User-generated content</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>Custom resolution items, category names, display names, and optional URLs attached to custom picks are user-generated content. You are responsible for the content you submit, including any links you attach to picks. Links are visible to all members of the resolution they appear in. By submitting content, you grant us a limited, non-exclusive licence to store and display it within the app for the purpose of operating the service.</p>
+          <p>We don&#x2019;t claim ownership of your content. Decisions made in resolutions belong to the users who participated in them, not to us.</p>
+          <p>We may remove content or suspend accounts where content violates these Terms. We&#x2019;ll try to act proportionately and consistently.</p>
+        </div>
+      </div>
+    </div>
 
-      <h2 id="s5">5. Ask a Friend</h2>
-      <p>Ask a Friend is a one-to-one decision mode where you ask a trusted friend to work through your bracket options on your behalf. Both you (the creator) and the person you ask (the helper) participate entirely voluntarily.</p>
-      <p>The helper must explicitly accept before participating. They can decline at any point before accepting without any obligation to explain why.</p>
-      <p>The helper&#x2019;s individual decision path is completely private &#x2014; the creator sees only the final result and standings, never the step-by-step choices. This is a technical guarantee, not just a policy statement.</p>
-      <p>We are not responsible for decisions made by helpers on behalf of creators. The app facilitates the process; it doesn&#x2019;t endorse, guarantee, or take responsibility for any particular outcome.</p>
-      <p class="plain-terms"><em>In plain terms: Ask a Friend is a tool to help, not to pressure. The helper&#x2019;s choices are their own. We don&#x2019;t take responsibility for where the bracket lands.</em></p>
+    <!-- 5 -->
+    <div class="doc-section">
+      <p class="section-label">5. Ask a Friend</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>Ask a Friend is a one-to-one mode where you share your options with someone you trust and let them work through them on your behalf. Both you (the creator) and the person you ask (the helper) participate entirely voluntarily.</p>
+          <p>The helper must explicitly accept before participating. They can decline at any point before accepting without any obligation to explain why.</p>
+          <p>The helper&#x2019;s individual decision path is completely private &#x2014; the creator sees only the final result and standings, never the step-by-step choices. This is a technical guarantee, not just a policy statement.</p>
+          <p>We are not responsible for decisions made by helpers on behalf of creators. The app facilitates the process; it doesn&#x2019;t endorse, guarantee, or take responsibility for any particular outcome.</p>
+          <div class="plain-terms">In plain terms: Ask a Friend is a tool to help, not to pressure. The helper&#x2019;s choices are their own. We don&#x2019;t take responsibility for where the resolution lands.</div>
+        </div>
+      </div>
+    </div>
 
-      <h2 id="s6">6. Invites, friend requests, and bracket access</h2>
-      <p>Any registered user can search for another user by @username. Finding someone does not add them to anything &#x2014; all bracket invites and friend requests require explicit acceptance from the recipient.</p>
-      <p>Bracket invites from non-friends expire after 72 hours if not accepted or declined. You are responsible for who you invite.</p>
+    <!-- 6 -->
+    <div class="doc-section">
+      <p class="section-label">6. Invites, friend requests, and resolution access</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>Any registered user can search for another user by @username. Finding someone does not add them to anything &#x2014; all resolution invites and friend requests require explicit acceptance from the recipient.</p>
+          <p>Resolution invites expire after 72 hours if not accepted or declined. You are responsible for who you invite.</p>
+        </div>
+      </div>
+    </div>
 
-      <h2 id="s7">7. Voluntary supporter tier</h2>
-      <p>A Little Help is free to use. We offer an optional voluntary supporter tier with one-time contributions ($2, $5, $10) and a monthly recurring option ($3/month), processed via RevenueCat.</p>
-      <p>Supporter perks currently include: early access to new features, and a personal heart icon visible only to you in your own profile. The supporter heart is never visible to other users.</p>
-      <p>Perks may change over time &#x2014; we&#x2019;ll give you notice before removing any existing perk. The supporter tier creates no functional feature differences from the free tier for other users. You are supporting development because you want to, not because you have to.</p>
-      <p>Refunds are governed by Apple&#x2019;s and Google&#x2019;s standard refund policies, as applicable. We don&#x2019;t control these policies but will do our best to help if you have a concern &#x2014; email us at <a href="mailto:alittlehelpapp@proton.me">alittlehelpapp@proton.me</a>.</p>
-      <p class="plain-terms"><em>In plain terms: the app is free. Supporters get a few nice extras, but nothing that affects anyone else. Your support keeps the lights on.</em></p>
+    <!-- 7 -->
+    <div class="doc-section">
+      <p class="section-label">7. Voluntary supporter tier</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>A Little Help is free to use. We offer an optional voluntary supporter tier with one-time contributions ($2, $5, $10) and a monthly recurring option ($3/month), processed via RevenueCat.</p>
+          <p>Supporter perks currently include: early access to new features, and a personal heart icon visible only to you in your own profile. The supporter heart is never visible to other users.</p>
+          <p>Perks may change over time &#x2014; we&#x2019;ll give you notice before removing any existing perk. The supporter tier creates no functional feature differences from the free tier for other users.</p>
+          <p>Refunds are governed by Apple&#x2019;s standard refund policies. We don&#x2019;t control these policies but will do our best to help if you have a concern &#x2014; email us at <a href="mailto:support@a-little-help.com">support@a-little-help.com</a>.</p>
+          <div class="plain-terms">In plain terms: the app is free. Supporters get a few nice extras, but nothing that affects anyone else. Your support keeps the lights on.</div>
+        </div>
+      </div>
+    </div>
 
-      <h2 id="s8">8. Grandfathering commitment</h2>
-      <p>This is a binding commitment: all users who create an account before any future change to a paid model will retain free access to all features available at the time of their account creation, permanently.</p>
-      <p>This is not just a policy promise. It is reflected technically in our database &#x2014; your <code>account_created_at</code> timestamp and grandfathered status are recorded at the moment you create your account and are never altered. If we ever introduce pricing, your free access cannot be revoked.</p>
-      <p class="plain-terms"><em>In plain terms: if you&#x2019;re here early, you&#x2019;ll always have what you have now for free. We mean it, and we&#x2019;ve built it into the system to prove it.</em></p>
+    <!-- 8 -->
+    <div class="doc-section">
+      <p class="section-label">8. Grandfathering commitment</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>This is a binding commitment: all users who create an account before any future change to a paid model will retain free access to all features available at the time of their account creation, permanently.</p>
+          <p>This is reflected technically in our database &#x2014; your <code style="font-family:monospace;font-size:0.88em;background:#F0EBE3;border-radius:4px;padding:1px 5px;">account_created_at</code> timestamp and grandfathered status are recorded at the moment you create your account and are never altered. If we ever introduce pricing, your free access cannot be revoked.</p>
+          <div class="plain-terms">In plain terms: if you&#x2019;re here early, you&#x2019;ll always have what you have now for free. We mean it, and we&#x2019;ve built it into the system to prove it.</div>
+        </div>
+      </div>
+    </div>
 
-      <h2 id="s9">9. Bracket data and decisions</h2>
-      <p>Decisions made in brackets &#x2014; what was nominated, how people voted in aggregate, and what won &#x2014; belong to the participating users. We don&#x2019;t claim ownership of your decisions.</p>
-      <p>Paused brackets are retained indefinitely until the creator reactivates or deletes them.</p>
-      <p>If an account is deleted, the following applies to active brackets:</p>
-      <ul>
-        <li>Group consensus and turn-based brackets: the creator role transfers to the next longest-standing member.</li>
-        <li>Ask a Friend brackets: the bracket is cancelled and the helper is notified.</li>
-        <li>The deleted user&#x2019;s nominated items remain in active brackets as ownerless nominations.</li>
-      </ul>
+    <!-- 9 -->
+    <div class="doc-section">
+      <p class="section-label">9. Resolution data and decisions</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>Decisions made in resolutions &#x2014; what was nominated, how people voted in aggregate, and what won &#x2014; belong to the participating users. We don&#x2019;t claim ownership of your decisions.</p>
+          <p>Paused resolutions are retained indefinitely until the creator reactivates or deletes them.</p>
+          <p>If an account is deleted, the following applies to active resolutions:</p>
+          <ul style="margin-top:8px;">
+            <li>Group consensus resolutions: the creator role transfers to the next longest-standing member.</li>
+            <li>Ask a Friend resolutions: the resolution is cancelled and the helper is notified.</li>
+            <li>The deleted user&#x2019;s nominated items remain in active resolutions as ownerless nominations.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-      <h2 id="s10">10. Account termination</h2>
+    <!-- 10 -->
+    <div class="doc-section">
+      <p class="section-label">10. Account termination</p>
+      <div class="section-card">
 
-      <h3>10.1 Your right to leave</h3>
-      <p>You can delete your account at any time from Security settings. After 30 days, your personal data is permanently purged. At day 25, we&#x2019;ll send a reactivation notice to your registered email.</p>
+        <div class="subsection">
+          <p class="subsection-heading">10.1 Your right to leave</p>
+          <p>You can delete your account at any time from Security settings. After 30 days, your personal data is permanently purged. At day 25, we&#x2019;ll send a reactivation notice to your registered email.</p>
+        </div>
 
-      <h3>10.2 Our right to suspend or terminate</h3>
-      <p>We may suspend or terminate your account if you violate these Terms &#x2014; particularly for harassment, abuse of the invite system, offensive content, or repeated violations after warnings. We&#x2019;ll try to give notice before taking action unless the violation is serious enough to require immediate suspension.</p>
-      <p>If your account is terminated by us, you may contact <a href="mailto:alittlehelpapp@proton.me">alittlehelpapp@proton.me</a> to appeal.</p>
+        <div class="subsection">
+          <p class="subsection-heading">10.2 Our right to suspend or terminate</p>
+          <p>We may suspend or terminate your account if you violate these Terms &#x2014; particularly for harassment, abuse of the invite system, offensive content, or repeated violations after warnings. We&#x2019;ll try to give notice before taking action unless the violation is serious enough to require immediate suspension.</p>
+          <p>If your account is terminated by us, you may contact <a href="mailto:support@a-little-help.com">support@a-little-help.com</a> to appeal.</p>
+        </div>
 
-      <h2 id="s11">11. Disclaimer of warranties</h2>
-      <p>A Little Help is provided &#x201C;as is&#x201D; and &#x201C;as available.&#x201D; We make no warranties, express or implied, regarding the reliability, accuracy, or fitness of the app for any particular purpose.</p>
-      <p class="plain-terms"><em>In plain terms: we do our best to keep the app working well, but we can&#x2019;t promise it will always be available or error-free.</em></p>
+      </div>
+    </div>
 
-      <h2 id="s12">12. Limitation of liability</h2>
-      <p>To the maximum extent permitted by law, Little Frisser LLC will not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of A Little Help &#x2014; including, without limitation, any decisions made through the app.</p>
-      <p>Our total liability to you for any claim arising from these Terms or your use of the app will not exceed the greater of $50 USD or the amount you paid us in the 12 months preceding the claim.</p>
-      <p class="plain-terms"><em>In plain terms: we&#x2019;re not liable for decisions the app helps you make, or for losses that aren&#x2019;t directly our fault. If something does go wrong on our end, our liability is limited.</em></p>
+    <!-- 11 -->
+    <div class="doc-section">
+      <p class="section-label">11. Disclaimer of warranties</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>A Little Help is provided &#x201C;as is&#x201D; and &#x201C;as available.&#x201D; We make no warranties, express or implied, regarding the reliability, accuracy, or fitness of the app for any particular purpose.</p>
+          <div class="plain-terms">In plain terms: we do our best to keep the app working well, but we can&#x2019;t promise it will always be available or error-free.</div>
+        </div>
+      </div>
+    </div>
 
-      <h2 id="s13">13. Governing law</h2>
-      <p>These Terms are governed by the laws of the State of Oregon, United States, without regard to conflict-of-law principles. Any disputes arising from these Terms will be resolved in the courts of the State of Oregon.</p>
+    <!-- 12 -->
+    <div class="doc-section">
+      <p class="section-label">12. Limitation of liability</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>To the maximum extent permitted by law, Little Frisser LLC will not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of A Little Help &#x2014; including, without limitation, any decisions made through the app.</p>
+          <p>Our total liability to you for any claim arising from these Terms or your use of the app will not exceed the greater of $50 USD or the amount you paid us in the 12 months preceding the claim.</p>
+          <div class="plain-terms">In plain terms: we&#x2019;re not liable for decisions the app helps you make, or for losses that aren&#x2019;t directly our fault. If something does go wrong on our end, our liability is limited.</div>
+        </div>
+      </div>
+    </div>
 
-      <h2 id="s14">14. Changes to these Terms</h2>
-      <p>If we make material changes to these Terms, we&#x2019;ll notify you via push notification and an in-app banner at least 30 days before the changes take effect. Continued use of the app after that date constitutes your acceptance of the updated Terms.</p>
-      <p>Non-material changes (such as correcting a typo or clarifying an existing clause) won&#x2019;t require advance notice, but the effective date at the top of this document will always reflect the most recent revision.</p>
+    <!-- 13 -->
+    <div class="doc-section">
+      <p class="section-label">13. Governing law</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>These Terms are governed by the laws of the State of Oregon, United States, without regard to conflict-of-law principles. Any disputes arising from these Terms will be resolved in the courts of the State of Oregon.</p>
+        </div>
+      </div>
+    </div>
 
-      <h2 id="s15">15. Contact</h2>
-      <p>Questions about these Terms: <a href="mailto:alittlehelpapp@proton.me">alittlehelpapp@proton.me</a><br>Little Frisser LLC, Oregon, United States</p>
+    <!-- 14 -->
+    <div class="doc-section">
+      <p class="section-label">14. Changes to these Terms</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>If we make material changes to these Terms, we&#x2019;ll notify you via push notification and an in-app banner at least 30 days before the changes take effect. Continued use of the app after that date constitutes your acceptance of the updated Terms.</p>
+          <p>Non-material changes won&#x2019;t require advance notice, but the effective date at the top of this document will always reflect the most recent revision.</p>
+        </div>
+      </div>
+    </div>
 
-    </article>
-  </div>
+    <!-- 15 -->
+    <div class="doc-section">
+      <p class="section-label">15. Contact</p>
+      <div class="section-card">
+        <div class="section-body">
+          <p>Questions about these Terms: <a href="mailto:support@a-little-help.com">support@a-little-help.com</a><br>Little Frisser LLC, Oregon, United States</p>
+        </div>
+      </div>
+    </div>
 
+  </div><!-- /doc-body -->
+
+  <!-- Footer -->
   <footer>
-    <div>&#169; 2026 Little Frisser LLC. All rights reserved.</div>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="mailto:alittlehelpapp@proton.me">alittlehelpapp@proton.me</a>
+    <div class="footer-inner">
+      <p class="footer-brand">A Little Help &middot; Little Frisser LLC &middot; Oregon</p>
+      <nav class="footer-links" aria-label="Legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="support.html">Support</a>
+      </nav>
     </div>
   </footer>
 
+</div>
 </body>
 </html>
